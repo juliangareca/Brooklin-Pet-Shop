@@ -1,10 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import NavBar from "./components/NavBar/NavBar.js"
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Brooklin Pet Shop</h1>
+      <NavBar/>
     </div>
   );
 }
