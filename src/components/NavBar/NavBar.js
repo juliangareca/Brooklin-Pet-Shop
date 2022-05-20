@@ -1,5 +1,6 @@
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Carrito from "../Carrito/CartWidget";
 
 
 
@@ -22,8 +23,7 @@ const NavBar = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">Nosotros</a>
-            </li>
-            
+            </li>            
             <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Catalogo
@@ -41,6 +41,7 @@ const NavBar = () => {
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">Search</button>
           </form>
+          <Carrito/>
         </div>
       </div>
     </nav>
