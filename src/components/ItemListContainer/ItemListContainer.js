@@ -10,7 +10,7 @@ const ItemListContainer = ({titulo, subtitulo, pagos}) => {
         <div className="pagos">
             <h1>{titulo}</h1>
             <h2>{subtitulo}</h2>
-            <p>{pagos}</p>
+            <h3>{pagos}</h3>
         </div>
 
     )
