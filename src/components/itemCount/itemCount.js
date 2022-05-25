@@ -21,7 +21,7 @@ const ItemCount = () => {
       
     
         <div className="button-container">
-          <Button onClick={restCount} disabled={count == 0}>
+          <Button onClick={restCount} disabled={count === 0}>
             -
           </Button>
           <p>{count}</p>
