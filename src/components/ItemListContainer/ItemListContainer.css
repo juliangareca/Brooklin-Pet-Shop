@@ -1,4 +1,11 @@
 .pagos{
     background-color: black;
-    color: white
+    color: white;
+    padding-bottom: 10px;
+
+}
+
+.cardContainer{
+    display: flex;
+    padding-top: 20px;
 }
