@@ -4,19 +4,25 @@ import { useState } from "react";
 
 
 
-const ItemCount = (productos) => {
+const ItemCount = () => {
+  console.log()
   const [count, setCount] = useState(1);
-  console.log(productos)
+
+  const restCount = () => {
+    if(count <= 1){
+
+    } else {
+        setCount(count -1)
+    }  };
+    
   const addCount = () => {
 
-    if (count > 4) {
+    if (count > 10) {
     } else {setCount(count + 1);
+      console.log("agregaste", {count} )
     }
   };
 
-  const restCount = () => {
-    setCount(count - 1);
-  };
 
   return (
       

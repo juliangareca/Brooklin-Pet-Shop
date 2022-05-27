@@ -5,52 +5,52 @@ import { useState, useEffect } from "react"
 
 const ItemList = () =>{
     const [products, setProducts] = useState([])
-    const productos = [
-
-        {
-            producto: "Pelota",
-            descripcion: "Gato",
-            precio: "$1500",
-            stock: 3,
-            id: 1
-        },
-        {
-            producto: "Hueso",
-            descripcion: "Gato",
-            precio: "$1200",
-            stock: 12,
-            id: 2
-        },
-        {
-            producto: "Pelota 2",
-            descripcion: "Perro",
-            precio: "$2500",
-            stock: 3,
-            id: 3
-        },
-        {
-            producto: "Hueso 2",
-            descripcion: "Perro",
-            precio: "$3500",
-            stock: 30,
-            id: 4
-        },
-
-    ]
-
-    const getProducts = () => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(productos)
-
-
-            }, 2000)
-
-        })
-    }
+    
     useEffect(() => {
-        getProducts()
-            .then((res) => {
+        const productos = [
+
+            {
+                producto: "Pelota",
+                descripcion: "Gato",
+                precio: "$1500",
+                stock: 3,
+                id: 1
+            },
+            {
+                producto: "Hueso",
+                descripcion: "Gato",
+                precio: "$1200",
+                stock: 12,
+                id: 2
+            },
+            {
+                producto: "Pelota 2",
+                descripcion: "Perro",
+                precio: "$2500",
+                stock: 3,
+                id: 3
+            },
+            {
+                producto: "Hueso 2",
+                descripcion: "Perro",
+                precio: "$3500",
+                stock: 30,
+                id: 4
+            },
+    
+        ]
+    
+        const getProducts = () => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(productos)
+    
+    
+                }, 2000)
+    
+            })
+        }
+        getProducts().then((res) => {
 
                 setProducts(res)
             })
@@ -65,10 +65,12 @@ const ItemList = () =>{
     return(
     
         products.map( (lista) => {
+            // console.log(lista)
+
             const {producto, descripcion, precio, id} = lista
             return (
              
-                    <Item producto={producto} descripcion={descripcion} precio={precio}  key={id}/>
+                    <Item producto={producto} descripcion={descripcion} precio={precio} key={id}/>
               
             )
         })

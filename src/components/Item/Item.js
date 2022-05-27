@@ -1,6 +1,7 @@
 import ItemCount from "../itemCount/itemCount";
 import "./Item.css";
 
+
 const Item = ({producto, descripcion,precio}) => {
 
 
@@ -12,7 +13,8 @@ const Item = ({producto, descripcion,precio}) => {
         <p className="card-text">{descripcion}</p>
         <p className="card-text">{precio}</p>
         <div className="button-container">
-          <ItemCount/>
+          <ItemCount lista={prod}/>
+         
         </div>
         <a href="somewere" className="btn btn-primary">
           Agregar al carrito
