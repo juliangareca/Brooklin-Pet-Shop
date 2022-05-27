@@ -4,10 +4,11 @@ import { useState } from "react";
 
 
 
-const ItemCount = () => {
-  const [count, setCount] = useState(0);
-
+const ItemCount = (productos) => {
+  const [count, setCount] = useState(1);
+  console.log(productos)
   const addCount = () => {
+
     if (count > 4) {
     } else {setCount(count + 1);
     }
@@ -19,14 +20,17 @@ const ItemCount = () => {
 
   return (
       
-    
+
         <div className="button-container">
           <Button onClick={restCount} disabled={count === 0}>
             -
           </Button>
           <p>{count}</p>
           <Button onClick={addCount}>+</Button>
+  
         </div>
+        
+
     
   );
 };

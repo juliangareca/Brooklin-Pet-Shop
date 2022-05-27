@@ -1,7 +1,7 @@
 import ItemCount from "../itemCount/itemCount";
-import "./Card.css";
+import "./Item.css";
 
-const Card = ({producto, descripcion, stock}) => {
+const Item = ({producto, descripcion,precio}) => {
 
 
   return (
@@ -10,15 +10,16 @@ const Card = ({producto, descripcion, stock}) => {
       <div className="card-body">
         <h5 className="card-title">{producto}</h5>
         <p className="card-text">{descripcion}</p>
+        <p className="card-text">{precio}</p>
         <div className="button-container">
           <ItemCount/>
         </div>
         <a href="somewere" className="btn btn-primary">
-          Mas detalles
+          Agregar al carrito
         </a>
       </div>
     </div>
   );
 };
 
-export default Card;
+export default Item;

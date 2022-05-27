@@ -1,11 +1,9 @@
-import Card from "../Card/Card"
+import ItemList from "../ItemList/ItemList"
 import "./ItemListContainer.css"
 
-const ItemListContainer = ({titulo, subtitulo, pagos}) => {
+const ItemListContainer = ({ titulo, subtitulo, pagos }) => {
 
-    
-    
-    return(
+    return (
 
         <div>
             <div className="pagos">
@@ -14,12 +12,9 @@ const ItemListContainer = ({titulo, subtitulo, pagos}) => {
                 <h3>{pagos}</h3>
             </div>
             <div className="container cardContainer">
-                <Card producto={"Pelota"} descripcion={"Gato"} stock={5}/>
-                <Card producto={"Hueso"} descripcion={"Gato"} stock={6}/>
-                <Card producto={"Pelota 2"} descripcion={"Perro"} stock={11}/>
-                <Card producto={"Hueso 2"} descripcion={"Perro"} stock={3}/>
-
+                <ItemList/>
             </div>
+
         </div>
 
     )
