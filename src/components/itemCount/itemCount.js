@@ -33,7 +33,6 @@ const ItemCount = ({stock, onAdd}) => {
             -
           </Button>
           <p>{count}</p>
-          {/* <Button onClick={addCount}>+</Button> */}
           <Button onClick={() => { onAdd(count, addCount())}} >+</Button>
   
         </div>
