@@ -4,8 +4,9 @@ import { useState } from "react";
 
 
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({stock, onAdd}) => {
   
+  // console.log(onAdd)
   const [count, setCount] = useState(1);
 
   const restCount = () => {
@@ -20,7 +21,6 @@ const ItemCount = ({stock}) => {
     if (count < stock) {
       let counter = count +1
       setCount(counter)
-      console.log("agregaste", {counter})
     }   
   };
 
@@ -33,7 +33,8 @@ const ItemCount = ({stock}) => {
             -
           </Button>
           <p>{count}</p>
-          <Button onClick={addCount}>+</Button>
+          {/* <Button onClick={addCount}>+</Button> */}
+          <Button onClick={() => { onAdd(count, addCount())}} >+</Button>
   
         </div>
         

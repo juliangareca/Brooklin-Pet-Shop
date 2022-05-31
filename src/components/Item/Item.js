@@ -4,6 +4,12 @@ import "./Item.css";
 
 const Item = ({producto}) => {
 
+  function onAdd (count) {
+
+    console.log(`Agregaste ${count} al carrito`)
+  
+  }
+
   return (
     <div className="card card-style">
       <img src={producto.img} className="card-img-top" alt="imagen del petshop" />
@@ -12,7 +18,7 @@ const Item = ({producto}) => {
         <p className="card-text">{producto.descripcion}</p>
         <p className="card-text">{producto.precio}</p>
         <div className="button-container">
-          <ItemCount stock={producto.stock}/>
+          <ItemCount stock={producto.stock} onAdd={onAdd}/>
          
         </div>
         <a href="somewere" className="btn btn-primary">
