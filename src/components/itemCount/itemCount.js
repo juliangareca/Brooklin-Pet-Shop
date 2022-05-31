@@ -4,23 +4,24 @@ import { useState } from "react";
 
 
 
-const ItemCount = () => {
-  console.log()
+const ItemCount = ({stock}) => {
+  
   const [count, setCount] = useState(1);
 
   const restCount = () => {
-    if(count <= 1){
-
-    } else {
-        setCount(count -1)
-    }  };
+    if(count >= 1){
+      let counter = count -1 
+      setCount(counter)
+    } 
+  };
     
   const addCount = () => {
 
-    if (count > 10) {
-    } else {setCount(count + 1);
-      console.log("agregaste", {count} )
-    }
+    if (count < stock) {
+      let counter = count +1
+      setCount(counter)
+      console.log("agregaste", {counter})
+    }   
   };
 
 
