@@ -2,12 +2,12 @@ import ItemCount from "../itemCount/itemCount";
 import "./Item.css";
 
 
-const Item = ({producto}) => {
+const Item = ({ producto }) => {
 
-  function onAdd (count) {
+  function onAdd(count) {
 
     console.log(`Agregaste ${count} al carrito`)
-  
+
   }
 
   return (
@@ -18,8 +18,8 @@ const Item = ({producto}) => {
         <p className="card-text">{producto.descripcion}</p>
         <p className="card-text">{producto.precio}</p>
         <div className="button-container">
-          <ItemCount stock={producto.stock} onAdd={onAdd}/>
-         
+          <ItemCount stock={producto.stock} onAdd={onAdd} />
+
         </div>
         <a href="somewere" className="btn btn-primary">
           Agregar al carrito

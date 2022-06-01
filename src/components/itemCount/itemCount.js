@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const ItemCount = ({stock, onAdd}) => {
   
-  // console.log(onAdd)
+
   const [count, setCount] = useState(1);
 
   const restCount = () => {
