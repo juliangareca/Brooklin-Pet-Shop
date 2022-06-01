@@ -6,7 +6,7 @@ const ItemDetail = ({ info }) => {
 
     function onAdd(count) {
 
-        console.log(`Agregaste ${count} ${info.producto} al carrito`)
+        console.log(`Agregaste ${count} "${info.producto}" al carrito`)
     
       }
 
