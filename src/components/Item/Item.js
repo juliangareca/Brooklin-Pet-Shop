@@ -6,7 +6,7 @@ const Item = ({ producto }) => {
 
   function onAdd(count) {
 
-    console.log(`Agregaste ${count} al carrito`)
+    console.log(`Agregaste ${count} ${producto.producto} al carrito`)
 
   }
 
@@ -21,9 +21,6 @@ const Item = ({ producto }) => {
           <ItemCount stock={producto.stock} onAdd={onAdd} />
 
         </div>
-        <a href="somewere" className="btn btn-primary">
-          Agregar al carrito
-        </a>
       </div>
     </div>
   );
