@@ -8,41 +8,35 @@ import { useParams } from "react-router-dom";
 
 const ItemDetailList = () => {
 
-    const {category} = useParams()
     const [products, setProducts] = useState([])
-
+    const {category} = useParams()
+    console.log(products)
 
     useEffect(() => {
-    
-        const getProducts = () => {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    resolve(productos)
-
-    
-                }, 1000)
-    
-            })
-        }
-        getProducts().then((res) => {
-
+        console.log("category: ", category)      
+        getProducts()
+        .then( (res) => {
                 // setProducts(res)
                 productosFilterArray(res)
-                console.log(res)
+
             })
     }, []);
+    const getProducts = () => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(productos)
+            }, 1000)
+            console.log(productos)
 
-
-    const productosFilterArray =  (array) =>{
-
-        return array.map( (item) => {
-            if(item.descripcion == category) {
-                return setProducts(item)
-            }
         })
+    }
 
-        
-
+    const productosFilterArray =  (array) => {
+        return (array.map( (item) => {
+            if(item.descripcion == category) {
+                return setProducts([item])
+            }
+        }) )
     }
     
 
@@ -51,8 +45,8 @@ const ItemDetailList = () => {
     return (
 
         <div className="container cardContainer">
-        <ItemList products={products}/>
-    </div>
+                <ItemList products={products}/>
+        </div>
     )
 }
 

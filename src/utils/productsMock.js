@@ -4,7 +4,7 @@ const productos = [
 
     {
         producto: "Pelota",
-        descripcion: "Gato",
+        descripcion: "gato",
         precio: "$1500",
         stock: 3,
         tipo: "SE BALANCEA CUANDO EL GATO LO MANOTEA, 100% nuevo y de alta calidad.El material ambiental y no tóxico es duradero y no hace daño a la mascota. Un juguete muy divertido y puede atraer la atención de su gato. No tóxico e inofensivo para las mascotas",
