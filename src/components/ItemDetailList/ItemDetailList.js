@@ -5,50 +5,52 @@ import { useParams } from "react-router-dom";
 
 
 
-
 const ItemDetailList = () => {
-
+    
     const [products, setProducts] = useState([])
     const {category} = useParams()
-    console.log(products)
-
+   
+    
     useEffect(() => {
         setProducts([])
-        console.log("category: ", category)      
         getProducts()
         .then( (res) => {
-                // setProducts(res)
-                productosFilterArray(res)
-
-            })
+            setProducts(productosFilterArray(res))
+            
+        })
     }, [category]);
     const getProducts = () => {
         return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(productos)
             }, 1000)
-            console.log(productos)
-
+            
         })
-    }
-
-    const productosFilterArray =  (array) => {
-        return array.map( (item) => {
-            if(item.descripcion == category) {
-                return setProducts(products => [...products, item])
-            }
-        }) 
     }
     
 
-  
+    const productosFilterArray =  (array) => {
 
+        const productosFiltrados = array.filter( (item) => {
+            if(item.descripcion == category) {
+                return item
+            }
+        }) 
+
+        console.log("esto es el array: ", array)
+        return productosFiltrados
+    }
+    
+    
+    
+    
     return (
-
+        
         <div className="container cardContainer">
                 <ItemList products={products}/>
         </div>
     )
+    console.log(ItemDetailList())
 }
 
 

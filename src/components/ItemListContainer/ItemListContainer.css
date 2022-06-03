@@ -8,5 +8,10 @@
 .cardContainer{
     display: flex;
     padding-top: 20px;
-    justify-content: center;
+    justify-content: center;    
+    flex-wrap: wrap;
+}
+
+.cardContainer div {
+    margin-top: 2rem;
 }

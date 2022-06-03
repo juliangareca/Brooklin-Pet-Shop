@@ -38,6 +38,33 @@ const productos = [
         id: 4,
         img: img
     },
+    {
+        producto: "Hueso 2",
+        descripcion: "perro",
+        precio: "$3500",
+        stock: 30,
+        tipo: "",
+        id: 5,
+        img: img
+    },
+    {
+        producto: "Hueso 2",
+        descripcion: "perro",
+        precio: "$3500",
+        stock: 30,
+        tipo: "",
+        id: 6,
+        img: img
+    },
+    {
+        producto: "Hueso 2",
+        descripcion: "perro",
+        precio: "$3500",
+        stock: 30,
+        tipo: "",
+        id: 7,
+        img: img
+    },
 
 ]
 
