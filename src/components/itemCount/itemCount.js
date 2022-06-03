@@ -10,7 +10,7 @@ const ItemCount = ({stock, onAdd}) => {
   const [count, setCount] = useState(1);
 
   const restCount = () => {
-    if(count >= 1){
+    if(count > 1){
       let counter = count -1 
       setCount(counter)
     } 
@@ -34,9 +34,9 @@ const ItemCount = ({stock, onAdd}) => {
           </Button>
           <p>{count}</p>
           <Button onClick={addCount} >+</Button>
-          <a href="#" className="btn btn-primary" onClick={ () => { onAdd (count) } }>
+          <button className="btn btn-primary" onClick={ () => { onAdd (count) } }>
             Agregar al carrito
-          </a>
+          </button>
         </div>
         
 

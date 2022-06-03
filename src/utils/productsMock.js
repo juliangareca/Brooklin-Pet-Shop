@@ -7,6 +7,7 @@ const productos = [
         descripcion: "Gato",
         precio: "$1500",
         stock: 3,
+        tipo: "SE BALANCEA CUANDO EL GATO LO MANOTEA, 100% nuevo y de alta calidad.El material ambiental y no tóxico es duradero y no hace daño a la mascota. Un juguete muy divertido y puede atraer la atención de su gato. No tóxico e inofensivo para las mascotas",
         id: 1,
         img: img
     },
@@ -15,6 +16,7 @@ const productos = [
         descripcion: "Gato",
         precio: "$1200",
         stock: 12,
+        tipo: "",
         id: 2,
         img: img
     },
@@ -23,6 +25,7 @@ const productos = [
         descripcion: "Perro",
         precio: "$2500",
         stock: 3,
+        tipo: "",
         id: 3,
         img: img
     },
@@ -31,6 +34,7 @@ const productos = [
         descripcion: "Perro",
         precio: "$3500",
         stock: 30,
+        tipo: "",
         id: 4,
         img: img
     },

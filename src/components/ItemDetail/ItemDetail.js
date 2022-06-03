@@ -1,6 +1,6 @@
 import "./ItemDetail.css";
-import ItemCount from "../itemCount/itemCount";
-
+import ItemCount from "../ItemCount/ItemCount";
+    
 
 const ItemDetail = ({ info }) => {
 
