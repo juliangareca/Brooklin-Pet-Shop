@@ -13,7 +13,7 @@ const productos = [
     },
     {
         producto: "Hueso",
-        descripcion: "Gato",
+        descripcion: "gato",
         precio: "$1200",
         stock: 12,
         tipo: "",
@@ -22,7 +22,7 @@ const productos = [
     },
     {
         producto: "Pelota 2",
-        descripcion: "Perro",
+        descripcion: "perro",
         precio: "$2500",
         stock: 3,
         tipo: "",
@@ -31,7 +31,7 @@ const productos = [
     },
     {
         producto: "Hueso 2",
-        descripcion: "Perro",
+        descripcion: "perro",
         precio: "$3500",
         stock: 30,
         tipo: "",

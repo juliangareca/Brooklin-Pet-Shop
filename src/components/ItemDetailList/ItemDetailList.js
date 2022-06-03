@@ -13,6 +13,7 @@ const ItemDetailList = () => {
     console.log(products)
 
     useEffect(() => {
+        setProducts([])
         console.log("category: ", category)      
         getProducts()
         .then( (res) => {
@@ -20,7 +21,7 @@ const ItemDetailList = () => {
                 productosFilterArray(res)
 
             })
-    }, []);
+    }, [category]);
     const getProducts = () => {
         return new Promise((resolve) => {
             setTimeout(() => {
@@ -32,11 +33,11 @@ const ItemDetailList = () => {
     }
 
     const productosFilterArray =  (array) => {
-        return (array.map( (item) => {
+        return array.map( (item) => {
             if(item.descripcion == category) {
-                return setProducts([item])
+                return setProducts(products => [...products, item])
             }
-        }) )
+        }) 
     }
     
 
