@@ -1,14 +1,9 @@
-import ItemDetail from "../ItemDetail/ItemDetail"
-import { useEffect, useState } from "react"
-import { detalleProducto } from "../../utils/productsMock"
-import { useParams } from "react-router-dom"
-import productos from "../../utils/productsMock"
 
 
 
 
-const ItemDetailcontainer = () => {
-    
+const GetItemDetail = () =>{
+
     const {id} = useParams()
     const [detalle, setDetalle] = useState([])
 
@@ -25,24 +20,17 @@ const ItemDetailcontainer = () => {
         getItem().then((res) => {
             setDetalle(res)
             setDetalle(productosFilter)
-        });
-    
-       
+        })
+               
     }, []);
 
     const productosFilter =  productos.find( (producto) =>{
         return producto.id == id
     })
-
-    return (
-
-
-        <>
-
-            <ItemDetail info={detalle} />
-
-        </>
+    return(
+        asd
     )
 }
 
-export default ItemDetailcontainer
+
+export default GetItemDetail

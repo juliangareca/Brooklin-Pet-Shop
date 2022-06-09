@@ -27,23 +27,20 @@ const NavBar = () => {
             </li>
 
             <li className="nav-item dropdown">
-          <div className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Catalogo
-          </div>
-          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><Link to="/items/gato"className="dropdown-item" >Gatos</Link></li>
-            <li><Link to="/items/perro"className="dropdown-item" >Perros </Link></li>
-            {/* <li><a className="dropdown-item" href="#">Salud </a></li>
-            <li><hr className="dropdown-divider"/></li>
-            <li><a className="dropdown-item">Rascadores</a></li> */}
-          </ul>
-        </li>
+              <div className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Catalogo
+              </div>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><Link to="/items/gato" className="dropdown-item" >Gatos</Link></li>
+                <li><Link to="/items/perro" className="dropdown-item" >Perros </Link></li>
+              </ul>
+            </li>
           </ul>
           <form className="d-flex" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">Search</button>
           </form>
-          <Carrito/>
+          <Carrito />
         </div>
       </div>
     </nav>

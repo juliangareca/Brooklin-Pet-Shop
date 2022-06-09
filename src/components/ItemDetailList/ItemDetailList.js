@@ -21,9 +21,7 @@ const ItemDetailList = () => {
     }, [category]);
     const getProducts = () => {
         return new Promise((resolve) => {
-            setTimeout(() => {
                 resolve(productos)
-            }, 1000)
             
         })
     }
@@ -37,7 +35,7 @@ const ItemDetailList = () => {
             }
         }) 
 
-        console.log("esto es el array: ", array)
+        // console.log("esto es el array: ", array)
         return productosFiltrados
     }
     
