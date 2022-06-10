@@ -6,9 +6,11 @@ import { useEffect, useState } from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 
+
 const ItemDetail = ({ info }) => {
     const [showButton, setShowbutton] = useState(false)
     const [loading, setLoading] = useState(true)
+    // const {  } = useContext(CartContext)
 
     useEffect(()=>{
       setTimeout(()=>{

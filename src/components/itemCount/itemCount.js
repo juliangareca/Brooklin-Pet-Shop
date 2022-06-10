@@ -3,12 +3,10 @@ import { Button } from "@mui/material";
 import { useState } from "react";
 
 
-
 const ItemCount = ({stock, onAdd, setShowButton}) => {
   
 
   const [count, setCount] = useState(1);
-
   const restCount = () => {
     if(count > 1){
       let counter = count -1 
@@ -34,9 +32,9 @@ const ItemCount = ({stock, onAdd, setShowButton}) => {
           </Button>
           <p>{count}</p>
           <Button onClick={addCount} >+</Button>
-          <button className="btn btn-primary" onClick={ () => { onAdd (count) } }>
+          {/* <button className="btn btn-primary" onClick={addProductToCart({producto})}>
             Agregar al carrito
-          </button>
+          </button> */}
         </div>
         
 

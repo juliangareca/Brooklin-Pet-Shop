@@ -7,6 +7,7 @@ import Contacto from './pages/Contacto';
 import Nosotros from './pages/Nosotros';
 import Detalle from './pages/Detalle';
 import ItemDetailList from './components/ItemDetailList/ItemDetailList';
+import { CartProvider } from './context/CartContext';
 
 
 
@@ -15,17 +16,19 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <NavBar/>
-        <Routes>
-          <Route exact path='/' element={<Home/>}/>
-          <Route exact path='/items/:category' element={<ItemDetailList/>}/>
-          <Route exact path='/contacto' element={<Contacto/>}/>
-          <Route exact path='/nosotros' element={<Nosotros/>}/>
-          <Route exact path='/item/:id' element={<Detalle/>}/>
-          <Route exact path='*' element={<div>Error 404 - Página no encontrada</div>}/>
-        </Routes>
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <NavBar/>
+          <Routes>
+            <Route exact path='/' element={<Home/>}/>
+            <Route exact path='/items/:category' element={<ItemDetailList/>}/>
+            <Route exact path='/contacto' element={<Contacto/>}/>
+            <Route exact path='/nosotros' element={<Nosotros/>}/>
+            <Route exact path='/item/:id' element={<Detalle/>}/>
+            <Route exact path='*' element={<div>Error 404 - Página no encontrada</div>}/>
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
     </div>
   );
 

@@ -2,11 +2,13 @@ import ItemCount from "../ItemCount/ItemCount";
 import "./Item.css";
 import { Link } from "react-router-dom";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import CartContext from "../../context/CartContext";
 
 const Item = ({ producto }) => {
 
   const [loading, setLoading] = useState(true)
+  const { addProductToCart } = useContext(CartContext)
 
   useEffect(() => {
     setTimeout(() => {
@@ -53,7 +55,10 @@ const Item = ({ producto }) => {
           <p className="card-text">{producto.descripcion}</p>
           <p className="card-text">{producto.precio}</p>
           <div className="button-container">
-            <ItemCount stock={producto.stock} onAdd={onAdd} />
+            <ItemCount stock={producto.stock} onAdd={onAdd}/>
+            <button className="btn btn-primary" onClick={() => addProductToCart(producto)}>
+            Agregar al carrito
+          </button>
           </div>
           <button type="button" className="btn btn-outline-dark ">
             <Link to={"/item/" + producto.id}>Mas detalles</Link>
