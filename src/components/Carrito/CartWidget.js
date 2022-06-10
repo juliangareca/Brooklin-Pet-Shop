@@ -28,14 +28,16 @@ const Carrito = () => {
                     <div className="modal-body">
                         {cartListItems.map( (item) => {
                             return(
-                                <div className="card" key={item.id}>
-                                <img src={item.img} className="card-img-top" alt="imagen del petshop" />
+                        
+                                <div className="card" style={{flexFlow: "nowrap"}} key={item.id}>
+                                <img src={item.img} style={{width: "120px"}} className="card-img-top" alt="imagen del petshop" />
                                 <div className="card-body">
                                   <h5 className="card-title">{item.producto}</h5>
                                   <p className="card-text">{item.precio}</p>
                                 </div>
                                 <button type="button" className="btn btn-danger">-</button>
                               </div>
+                      
                              )
                         })} 
                     </div>
