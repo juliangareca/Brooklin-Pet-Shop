@@ -44,7 +44,6 @@ const Item = ({ producto }) => {
     function onAdd(count) {
 
       console.log(`Agregaste ${count} ${producto.producto} al carrito`)
-
     }
 
     return (
@@ -58,7 +57,7 @@ const Item = ({ producto }) => {
             <ItemCount stock={producto.stock} onAdd={onAdd}/>
             <button className="btn btn-primary" onClick={() => addProductToCart(producto)}>
             Agregar al carrito
-          </button>
+            </button>
           </div>
           <button type="button" className="btn btn-outline-dark ">
             <Link to={"/item/" + producto.id}>Mas detalles</Link>

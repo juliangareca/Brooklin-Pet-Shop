@@ -6,6 +6,7 @@ import { useState } from "react";
 const ItemCount = ({stock, onAdd, setShowButton}) => {
   
 
+
   const [count, setCount] = useState(1);
   const restCount = () => {
     if(count > 1){
