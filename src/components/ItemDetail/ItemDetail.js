@@ -1,16 +1,17 @@
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
-import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import CartContext from "../../context/CartContext";
 
 
 
 const ItemDetail = ({ info }) => {
     const [showButton, setShowbutton] = useState(false)
     const [loading, setLoading] = useState(true)
-    // const {  } = useContext(CartContext)
+    const { addProductToCart } = useContext(CartContext)
+    console.log("Item detal", info)
+
 
     useEffect(()=>{
       setTimeout(()=>{
@@ -49,11 +50,7 @@ const ItemDetail = ({ info }) => {
     else{
 
 
-    function onAdd(count) {
 
-        console.log(`Agregaste ${count} "${info.producto}" al carrito`)
-        setShowbutton(true)
-    }
 
     return (
 
@@ -68,9 +65,7 @@ const ItemDetail = ({ info }) => {
                         <h4 className="card-text"><small className="text-muted">{info.tipo}</small></h4>
                         <p className="card-text"><small className="text-muted">Precio: {info.precio}</small></p>
                         <p className="card-text"><small className="text-muted">Stock: {info.stock}</small></p>
-                        {!showButton ? <ItemCount stock={info.stock} onAdd={onAdd} setShowbutton={setShowbutton} />
-                            :
-                            <Button variant="outlined"><Link to="/cart">Terminar mi compra</Link></Button>}
+                        <ItemCount stock={info.stock} setShowbutton={setShowbutton} product={info}  />
                     </div>
                 </div>
             </div>

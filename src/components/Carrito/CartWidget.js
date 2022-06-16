@@ -5,6 +5,7 @@ import './CartWidget.css';
 
 const Carrito = () => {
 
+
     const { cartListItems, deleteItem, cleanCart } = useContext(CartContext)
 
     console.log("esto es Carrito: ", cartListItems)
@@ -34,6 +35,7 @@ const Carrito = () => {
                                         <div className="card-body">
                                             <h5 className="card-title">{item.producto}</h5>
                                             <p className="card-text">{item.precio}</p>
+                                            <p className="card-text">{item.count}</p>
                                         </div>
 
                                         <button onClick={() => {deleteItem(item.id)}} type="button" className="btn btn-danger"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-trash3" viewBox="0 0 16 16">

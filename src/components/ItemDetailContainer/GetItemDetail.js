@@ -27,9 +27,7 @@ const GetItemDetail = () =>{
     const productosFilter =  productos.find( (producto) =>{
         return producto.id == id
     })
-    return(
-        asd
-    )
+   
 }
 
 
