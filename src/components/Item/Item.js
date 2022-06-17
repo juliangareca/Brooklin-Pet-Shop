@@ -2,10 +2,11 @@ import ItemCount from "../ItemCount/ItemCount";
 import "./Item.css";
 import { Link } from "react-router-dom";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import CartContext from "../../context/CartContext";
 
 const Item = ({ producto , count}) => {
-
+  const { addProductToCart } = useContext(CartContext)
 
   const [loading, setLoading] = useState(true)
 
@@ -39,8 +40,10 @@ const Item = ({ producto , count}) => {
   }
   else {
 
-
-
+    function onAdd(count) {
+      addProductToCart( producto, producto.quantity = count)
+      console.log("esto es Item:", producto)
+    }
 
     return (
       <div className="card card-style">
@@ -50,7 +53,7 @@ const Item = ({ producto , count}) => {
           <p className="card-text">{producto.descripcion}</p>
           <p className="card-text">{producto.precio}</p>
           <div className="button-container">
-            <ItemCount stock={producto.stock}  product={producto} />
+          <ItemCount stock={producto.stock}  product={producto} onAdd={onAdd}/>
           </div>
           <button type="button" className="btn btn-outline-dark ">
             <Link to={"/item/" + producto.id}>Mas detalles</Link>
@@ -61,4 +64,4 @@ const Item = ({ producto , count}) => {
   }
 };
 
-export default Item;
+export default Item

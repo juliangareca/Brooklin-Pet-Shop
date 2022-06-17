@@ -7,7 +7,7 @@ import CartContext from "../../context/CartContext";
 
 
 const ItemDetail = ({ info }) => {
-    const [showButton, setShowbutton] = useState(false)
+
     const [loading, setLoading] = useState(true)
     const { addProductToCart } = useContext(CartContext)
     console.log("Item detal", info)
@@ -49,6 +49,10 @@ const ItemDetail = ({ info }) => {
 
     else{
 
+        function onAdd(count) {
+            addProductToCart( info, info.quantity = count)
+        }
+
 
 
 
@@ -65,7 +69,7 @@ const ItemDetail = ({ info }) => {
                         <h4 className="card-text"><small className="text-muted">{info.tipo}</small></h4>
                         <p className="card-text"><small className="text-muted">Precio: {info.precio}</small></p>
                         <p className="card-text"><small className="text-muted">Stock: {info.stock}</small></p>
-                        <ItemCount stock={info.stock} setShowbutton={setShowbutton} product={info}  />
+                        <ItemCount stock={info.stock} product={info} onAdd={onAdd}  />
                     </div>
                 </div>
             </div>

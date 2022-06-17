@@ -1,12 +1,11 @@
 import "./ItemCount.css"
 import { Button } from "@mui/material";
-import { useContext, useState } from "react";
-import CartContext from "../../context/CartContext";
+import { useState } from "react";
 
 
-const ItemCount = ({stock, product}) => {
+const ItemCount = ({stock, product, onAdd}) => {
   
-  const { addProductToCart } = useContext(CartContext)
+  // const { addProductToCart } = useContext(CartContext)
 
   const [count, setCount] = useState(1);
   const restCount = () => {
@@ -23,11 +22,11 @@ const ItemCount = ({stock, product}) => {
       setCount(counter)
     }   
   };
-  function onAdd() {
+  // function onAdd(count) {
       
-    addProductToCart(product)
-    console.log(`Agregaste ${count} ${product.producto} al carrito`)
-  }
+  //   addProductToCart(product, count)
+  //   console.log(`Agregaste ${count} ${product.producto} al carrito`)
+  // }
 
 
   return (
@@ -39,13 +38,10 @@ const ItemCount = ({stock, product}) => {
           </Button>
           <p>{count}</p>
           <Button onClick={addCount} >+</Button>
-          <button className="btn btn-primary" onClick={() => { onAdd(
-            
-          ) }}>
+          <button className="btn btn-primary" onClick={() => { onAdd(count) }}>
               Agregar al carrito
           </button>
 
-          {/* <AddToCart product={product} count={count}/> */}
         </div>
         
 
