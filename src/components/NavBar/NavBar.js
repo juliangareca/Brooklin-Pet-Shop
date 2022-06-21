@@ -1,14 +1,12 @@
-import React, { useContext } from "react"
+import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carrito from "../Carrito/CartWidget";
 import { Link } from "react-router-dom";
-import CartContext from "../../context/CartContext";
 
 
 
 const NavBar = () => {
 
-  const {cartListItems} = useContext(CartContext)
 
 
   return (

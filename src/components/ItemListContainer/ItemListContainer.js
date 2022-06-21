@@ -2,6 +2,8 @@ import ItemList from "../ItemList/ItemList"
 import "./ItemListContainer.css"
 import { useState, useEffect } from "react"
 import productos from "../../utils/productsMock"
+import db from "../../utils/firebaseConfig"
+import { collection, getDocs } from "firebase/firestore"
 
 
 const ItemListContainer = ({ titulo, subtitulo, pagos }) => {
@@ -10,19 +12,30 @@ const ItemListContainer = ({ titulo, subtitulo, pagos }) => {
 
     useEffect(() => {
         
-    
-        const getProducts = () => {
-            return new Promise((resolve) => {
-                    resolve(productos)  
-            })
-        }
-        getProducts().then((res) => {
-
-                setProducts(res)
+    getProducts2()
+        // const getProducts = () => {
+        //     return new Promise((resolve) => {
+        //             resolve(productos)  
+        //     })
+        // }
+        // getProducts().then((res) => {
+                
+        //         setProducts(res)
        
-            })
+        //     })
     }, []);
-
+    const getProducts2 = async () => {
+        const productSnapShot = await getDocs(collection(db, "productos"));
+        const productList = productSnapShot.docs.map((doc) => {
+            let product = doc.data()
+            product.id = doc.id
+            // console.log("product: ", product)
+            return product
+        })
+        return(
+            setProducts(productList)
+        )
+    }
     return (
 
         <div>
