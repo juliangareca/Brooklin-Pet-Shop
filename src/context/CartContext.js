@@ -6,17 +6,25 @@ const CartContext = createContext()
 const CartProvider = ({children}) =>{
 
     const [cartListItems, setCartListItems] =useState([])
-    console.log("esto es CartListItem: ",cartListItems)
+    const [cartQuantity, setCartQuantity] = useState(0)
     
     const addProductToCart = (product) =>{
-        console.log("Esto es la prueba: ", product.id)  
         let isInCart = cartListItems.find(cartItem => cartItem.id === product.id)
         
+        console.log("cartQuantity: ", cartQuantity)
         console.log("isInCart: ", isInCart)
         if(!isInCart){
             setCartListItems(cartListItems => [...cartListItems, product ])
+            // setCartQuantity(cartQuantity => [...cartQuantity, product.quantity])
+            setCartQuantity(cartQuantity + product.quantity)
+            
         }
-        console.log("Se agrego el producto en CartContext: ", product)
+        else {
+
+            // ACA ES DONDE DEBERIA DEFINIR LA LOGICA PARA QUE AGREGUE, PERO NO ME ESTARIA SALIENDO
+
+        }
+        
     }
 
     const deleteItem = (id) => {
@@ -25,23 +33,35 @@ const CartProvider = ({children}) =>{
         
     }
 
-    const cleanCart = () => setCartListItems([])
+    const cleanCart = () => {
+       
+        setCartListItems([])
 
-    // const totalCart = () => {
-    //     return array1.reduce((acc, item) => acc += item.quantity, 0)
-    //   }
+        setCartQuantity(0)
 
-    // const totalCart = () => {
-    //     return array1.reduce((acc, item) => acc + item.price * item.quantity, 0)
-    //   }
-      
+    }
+
+
+        
+    const totalCart2 = () => {
+        return cartListItems.reduce((acc, item) => acc += item.quantity, 0)
+      }
+
+      const totalCart = () => {
+        return cartListItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
+      }
+
       
 
     const data = {
         cartListItems,
         addProductToCart,
         deleteItem,
-        cleanCart
+        cleanCart,
+        totalCart2,
+        totalCart,
+        cartQuantity,
+        // total,
     }
     console.log("Esto es el CartContext: ", cartListItems)
 

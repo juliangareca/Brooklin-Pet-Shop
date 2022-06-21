@@ -67,7 +67,7 @@ const ItemDetail = ({ info }) => {
                     <div className="card-body">
                         <h2 className="card-title">{info.producto}</h2>
                         <h4 className="card-text"><small className="text-muted">{info.tipo}</small></h4>
-                        <p className="card-text"><small className="text-muted">Precio: {info.precio}</small></p>
+                        <p className="card-text"><small className="text-muted">Precio: ${info.precio}</small></p>
                         <p className="card-text"><small className="text-muted">Stock: {info.stock}</small></p>
                         <ItemCount stock={info.stock} product={info} onAdd={onAdd}  />
                     </div>

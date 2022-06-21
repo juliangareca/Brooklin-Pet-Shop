@@ -51,7 +51,7 @@ const Item = ({ producto , count}) => {
         <div className="card-body">
           <h5 className="card-title">{producto.producto}</h5>
           <p className="card-text">{producto.descripcion}</p>
-          <p className="card-text">{producto.precio}</p>
+          <p className="card-text">${producto.precio}</p>
           <div className="button-container">
           <ItemCount stock={producto.stock}  product={producto} onAdd={onAdd}/>
           </div>

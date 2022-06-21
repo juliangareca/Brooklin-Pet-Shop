@@ -3,9 +3,8 @@ import { Button } from "@mui/material";
 import { useState } from "react";
 
 
-const ItemCount = ({stock, product, onAdd}) => {
+const ItemCount = ({stock, onAdd}) => {
   
-  // const { addProductToCart } = useContext(CartContext)
 
   const [count, setCount] = useState(1);
   const restCount = () => {
@@ -22,11 +21,6 @@ const ItemCount = ({stock, product, onAdd}) => {
       setCount(counter)
     }   
   };
-  // function onAdd(count) {
-      
-  //   addProductToCart(product, count)
-  //   console.log(`Agregaste ${count} ${product.producto} al carrito`)
-  // }
 
 
   return (

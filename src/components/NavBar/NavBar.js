@@ -1,12 +1,14 @@
-import React from "react"
+import React, { useContext } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carrito from "../Carrito/CartWidget";
 import { Link } from "react-router-dom";
+import CartContext from "../../context/CartContext";
 
 
 
 const NavBar = () => {
 
+  const {cartListItems} = useContext(CartContext)
 
 
   return (
@@ -40,6 +42,7 @@ const NavBar = () => {
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">Search</button>
           </form>
+
           <Carrito />
         </div>
       </div>
