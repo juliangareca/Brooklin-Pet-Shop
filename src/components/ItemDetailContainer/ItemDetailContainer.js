@@ -1,9 +1,7 @@
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useEffect, useState } from "react"
-import { detalleProducto } from "../../utils/productsMock"
 import { useParams } from "react-router-dom"
-import productos from "../../utils/productsMock"
-import db from "../../utils/firebaseConfig"
+    import db from "../../utils/firebaseConfig"
 import { doc, getDoc } from "firebase/firestore"
 
 
@@ -18,14 +16,6 @@ const ItemDetailcontainer = () => {
         getProducts2()
         .then((res) => {
         setDetalle(res)
-        // const getItem = () => {
-        //     return new Promise((resolve) => {
-        //             resolve(detalleProducto)
-        //     })
-        // }
-
-
-            // setDetalle(productosFilter)
         });
     
        
@@ -39,9 +29,6 @@ const ItemDetailcontainer = () => {
         return product
     }
 
-    // const productosFilter =  productos.find( (producto) =>{
-    //     return producto.id == id
-    // })
 
     return (
 

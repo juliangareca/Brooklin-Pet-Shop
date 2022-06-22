@@ -6,52 +6,47 @@ const CartContext = createContext()
 const CartProvider = ({children}) =>{
 
     const [cartListItems, setCartListItems] =useState([])
-    const [cartQuantity, setCartQuantity] = useState(0)
-    
+  
     const addProductToCart = (product) =>{
-        let isInCart = cartListItems.find(cartItem => cartItem.id === product.id)
-        
-        console.log("cartQuantity: ", cartQuantity)
-        console.log("isInCart: ", isInCart)
-        if(!isInCart){
-            setCartListItems(cartListItems => [...cartListItems, product ])
-            // setCartQuantity(cartQuantity => [...cartQuantity, product.quantity])
-            setCartQuantity(cartQuantity + product.quantity)
+
+        if(isInCart(product)){
+
+            const productRepeatInCart = cartListItems.find(cartItem => cartItem.data.id === product.data.id)
+            const qty = productRepeatInCart.quantity
+
+            productRepeatInCart.quantity = qty + product.quantity
+
+            const cartListUpdate = [...cartListItems]
+            console.log("Esto es Cartlistupdate: ", productRepeatInCart)
+            setCartListItems(cartListUpdate)
             
-        }
-        else {
+        } else {
 
-            // ACA ES DONDE DEBERIA DEFINIR LA LOGICA PARA QUE AGREGUE, PERO NO ME ESTARIA SALIENDO
-
+            setCartListItems([...cartListItems, product ])
         }
-        
     }
 
     const deleteItem = (id) => {
-        const auxProductCart = cartListItems.filter(prod => prod.id !== id)
-        setCartListItems(auxProductCart)
-        
+        const auxProductCart = cartListItems.filter(prod => prod.data.id !== id)
+        setCartListItems(auxProductCart)   
     }
 
     const cleanCart = () => {
-       
         setCartListItems([])
-
-        setCartQuantity(0)
-
     }
 
-
+    const isInCart = (product) => {
+        return cartListItems.some(cartItem => cartItem.data.id === product.data.id)
+    }
         
     const totalCart2 = () => {
         return cartListItems.reduce((acc, item) => acc += item.quantity, 0)
-      }
+    }
 
-      const totalCart = () => {
-        return cartListItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
-      }
+    const totalCart = () => {
+        return cartListItems.reduce((acc, item) => acc + item.data.precio * item.quantity, 0)
+    }
 
-      
 
     const data = {
         cartListItems,
@@ -59,11 +54,9 @@ const CartProvider = ({children}) =>{
         deleteItem,
         cleanCart,
         totalCart2,
-        totalCart,
-        cartQuantity,
-        // total,
+        totalCart
     }
-    console.log("Esto es el CartContext: ", cartListItems)
+    
 
     return(
         <CartContext.Provider value={data}>

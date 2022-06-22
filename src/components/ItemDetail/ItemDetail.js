@@ -10,8 +10,6 @@ const ItemDetail = ({ info }) => {
 
     const [loading, setLoading] = useState(true)
     const { addProductToCart } = useContext(CartContext)
-    console.log("Item detal", info)
-
 
     useEffect(()=>{
       setTimeout(()=>{
@@ -50,7 +48,8 @@ const ItemDetail = ({ info }) => {
     else{
 
         function onAdd(count) {
-            addProductToCart( info, info.quantity = count)
+
+            addProductToCart( {data:info, quantity: count})
         }
 
 

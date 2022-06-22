@@ -7,19 +7,7 @@ import './Cart.css';
 
 const Cart = () => {
 
-    const { deleteItem, cartListItems,cleanCart } = useContext(CartContext)
-    const cartPrice = cartListItems.reduce((acc, current) => {
-        return acc + current.price + current.quantity
-    }, 0);
-
-    const totalCart = () => {
-        return cartListItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
-      }
-    console.log("esto es totalCart: ", totalCart)
-
-    console.log("esto es el cartPrice: ", cartPrice)
-
-    console.log(" esto es CART: ", cartListItems)
+    const { deleteItem, cartListItems,cleanCart, totalCart } = useContext(CartContext)
 
     if (cartListItems.length !== 0) {
 
@@ -43,13 +31,13 @@ const Cart = () => {
 
                             return (
 
-                                <tr  key={item.id}>
-                                    <td>{item.producto}</td>
+                                <tr  key={item.data.id}>
+                                    <td>{item.data.producto}</td>
                                     <td>{item.quantity}</td>
-                                    <td>${item.precio}</td>
-                                    <td>${item.precio * item.quantity}</td>
+                                    <td>${item.data.precio}</td>
+                                    <td>${item.data.precio * item.quantity}</td>
                                     <td>
-                                        <button onClick={() => { deleteItem(item.id) }} type="button" className="btn-close" aria-label="Close"></button>
+                                        <button onClick={() => { deleteItem(item.data.id) }} type="button" className="btn-close" aria-label="Close"></button>
                                     </td>
 
 
@@ -60,9 +48,9 @@ const Cart = () => {
                             <th scope="row"></th>
                             <th scope="row"></th>
                             <td colSpan="1" style={{textAlign:"end"}}>Total de tu compra: </td>
-                            <td>$</td>
+                            <td>$ { totalCart() } </td> 
                             <td>
-                            <button onClick={() => cleanCart()} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Pagar</button>
+                            <button type="button" className="btn btn-secondary" >Pagar</button>
                             </td>
                         </tr>
                     </tbody>

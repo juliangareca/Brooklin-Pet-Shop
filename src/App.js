@@ -12,7 +12,9 @@ import CarritoFinal from './pages/Cart';
 
 
 
+
 function App() {
+
   return (
     <div className="App">
       <CartProvider>

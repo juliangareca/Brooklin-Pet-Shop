@@ -5,7 +5,7 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { useContext, useEffect, useState } from "react";
 import CartContext from "../../context/CartContext";
 
-const Item = ({ producto , count}) => {
+const Item = ({ producto }) => {
   const { addProductToCart } = useContext(CartContext)
 
   const [loading, setLoading] = useState(true)
@@ -41,8 +41,7 @@ const Item = ({ producto , count}) => {
   else {
 
     function onAdd(count) {
-      addProductToCart( producto, producto.quantity = count)
-      console.log("esto es Item:", producto)
+      addProductToCart( {data:producto, quantity: count})
     }
 
     return (
