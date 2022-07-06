@@ -17,7 +17,6 @@ const CartProvider = ({children}) =>{
             productRepeatInCart.quantity = qty + product.quantity
 
             const cartListUpdate = [...cartListItems]
-            console.log("Esto es Cartlistupdate: ", productRepeatInCart)
             setCartListItems(cartListUpdate)
             
         } else {

@@ -1,5 +1,4 @@
 import "./ItemCount.css"
-import { Button } from "@mui/material";
 import { useState } from "react";
 
 
@@ -27,11 +26,13 @@ const ItemCount = ({stock, onAdd}) => {
       
 
         <div className="button-container">
-          <Button onClick={restCount} disabled={count === 0}>
+          <button  type="button" className="button" onClick={restCount} disabled={count === 0}>
             -
-          </Button>
+          </button>
           <p>{count}</p>
-          <Button onClick={addCount} >+</Button>
+          <button  type="button" className="button" onClick={addCount} >
+            +
+          </button>
           <button className="btn btn-primary" onClick={() => { onAdd(count) }}>
               Agregar al carrito
           </button>

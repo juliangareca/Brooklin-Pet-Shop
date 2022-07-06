@@ -1,7 +1,8 @@
 import ItemList from "../ItemList/ItemList"
 import { useEffect, useState } from "react";
-import productos from "../../utils/productsMock";
 import { useParams } from "react-router-dom";
+import db from "../../utils/firebaseConfig"
+import { collection, getDocs } from "firebase/firestore"
 
 
 
@@ -14,31 +15,33 @@ const ItemDetailList = () => {
     useEffect(() => {
         setProducts([])
         getProducts()
-        .then( (res) => {
-            setProducts(productosFilterArray(res))
-            
-        })
+
     }, [category]);
+
     const getProducts = () => {
         return new Promise((resolve) => {
-                resolve(productos)
+                resolve(getProducts2())
             
         })
     }
-    
 
-    const productosFilterArray =  (array) => {
-
-        const productosFiltrados = array.filter( (item) => {
+    const getProducts2 = async () => {
+        const productSnapShot = await getDocs(collection(db, "productos"));
+        const productList = productSnapShot.docs.map((doc) => {
+            let product = doc.data()
+            product.id = doc.id
+            return product
+        })
+        const productosFiltrados = productList.filter( (item) => {
             if(item.descripcion == category) {
                 return item
             }
         }) 
-
-        // console.log("esto es el array: ", array)
-        return productosFiltrados
-    }
-    
+          
+        return(
+            setProducts(productosFiltrados)
+            )
+        }
     
     
     
@@ -48,7 +51,7 @@ const ItemDetailList = () => {
                 <ItemList products={products}/>
         </div>
     )
-    console.log(ItemDetailList())
+
 }
 
 
