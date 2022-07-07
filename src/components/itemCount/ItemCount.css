@@ -4,7 +4,6 @@
  
 }
 
-/* From uiverse.io by @adamgiebl */
 .button {
     color: #090909;
     padding: 0.7em 1.7em;
@@ -14,4 +13,20 @@
     border: 1px solid #e8e8e8;
 
    }
+.count{
+    display: flex;
+    flex-direction: row;
+    place-content: space-evenly;
+}
+
+.row{
+    flex-direction: row;
+}
    
+div div p{
+    align-self: center;
+}
+
+.spacing{
+    margin-top: 25;
+}

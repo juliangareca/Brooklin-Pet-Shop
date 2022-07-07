@@ -3,9 +3,10 @@ import "./ItemListContainer.css"
 import { useState, useEffect } from "react"
 import db from "../../utils/firebaseConfig"
 import { collection, getDocs } from "firebase/firestore"
+import Banner from "../Banner/Banner"
 
 
-const ItemListContainer = ({ titulo, subtitulo, pagos }) => {
+const ItemListContainer = () => {
 
     const [products, setProducts] = useState([])
 
@@ -28,11 +29,8 @@ const ItemListContainer = ({ titulo, subtitulo, pagos }) => {
     return (
 
         <div>
-            <div className="pagos">
-                <h1>{titulo}</h1>
-                <h2>{subtitulo}</h2>
-                <h3>{pagos}</h3>
-            </div>
+            <Banner/>
+                <h1>Catálogo de productos</h1>
             <div className="container cardContainer">
                 <ItemList products={products}/>
             </div>

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import db from "../../utils/firebaseConfig"
 import { collection, getDocs } from "firebase/firestore"
+import Banner from "../Banner/Banner";
 
 
 
@@ -47,8 +48,12 @@ const ItemDetailList = () => {
     
     return (
         
+        <div>
+      <Banner/>
+            <h1>Catálogo para {category+"s"}</h1>
         <div className="container cardContainer">
                 <ItemList products={products}/>
+        </div>
         </div>
     )
 

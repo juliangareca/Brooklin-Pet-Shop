@@ -68,3 +68,23 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Proyecto CoderHouse React.js
+
+Este es un proyecto que se inicio para la camada 31180, que consta de un E-comerce.
+El mismo es de un Pet Shop (emprendimiento que inicio mi hermana hace poco)
+
+### Dependencias
+
+Para correr correctamente los estilos se debe instalar Bootstap 5.2
+
+npm i bootstrap@5.2.0-beta1
+
+Como asi tambien Bootstrap icons
+
+npm i bootstrap-icons
+
+
+
+

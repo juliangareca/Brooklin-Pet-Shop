@@ -68,7 +68,6 @@ const Cart = () => {
 
     }
     (function () {
-        'use strict'
 
         let forms = document.querySelectorAll('.needs-validation')
         Array.prototype.slice.call(forms)

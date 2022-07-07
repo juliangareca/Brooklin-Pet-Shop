@@ -2,8 +2,8 @@ import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carrito from "../Carrito/CartWidget";
 import { Link } from "react-router-dom";
-
-
+import logo from "../../assets/petshop.jpg"
+import './NavBar.css';
 
 const NavBar = () => {
 
@@ -11,6 +11,7 @@ const NavBar = () => {
 
     <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
       <div className="container-fluid">
+        <img src={logo} alt="Logo" className="logo"/>
         <Link to="/" className="navbar-brand">Brooklin Pet Shop</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -34,11 +35,6 @@ const NavBar = () => {
               </ul>
             </li>
           </ul>
-          <form className="d-flex" role="search">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success" type="submit">Search</button>
-          </form>
-
           <Carrito />
         </div>
       </div>

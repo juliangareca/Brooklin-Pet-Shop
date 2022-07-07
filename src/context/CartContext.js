@@ -5,7 +5,7 @@ const CartContext = createContext()
 
 const CartProvider = ({children}) =>{
 
-    const [cartListItems, setCartListItems] =useState([])
+    const [cartListItems, setCartListItems] =useState(JSON.parse(localStorage.getItem("products")) || [])
   
     const addProductToCart = (product) =>{
 
@@ -18,15 +18,17 @@ const CartProvider = ({children}) =>{
 
             const cartListUpdate = [...cartListItems]
             setCartListItems(cartListUpdate)
-            
+            localStorage.setItem("products", JSON.stringify(cartListUpdate))
         } else {
-
+            localStorage.setItem("products", JSON.stringify([...cartListItems, product ]))
             setCartListItems([...cartListItems, product ])
         }
     }
 
     const deleteItem = (id) => {
         const auxProductCart = cartListItems.filter(prod => prod.data.id !== id)
+        localStorage.setItem("products", JSON.stringify(auxProductCart))
+
         setCartListItems(auxProductCart)   
     }
 

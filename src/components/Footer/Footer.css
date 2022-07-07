@@ -1,0 +1,19 @@
+
+
+
+.copy{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.face{
+    background-color: #000000;
+}
+
+.mail{
+    background-color: #dd4b39;
+}
+
+.img{
+    margin-top: 30px;
+    width: -webkit-fill-available;
+}
