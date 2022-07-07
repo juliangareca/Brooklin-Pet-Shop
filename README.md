@@ -85,6 +85,16 @@ Como asi tambien Bootstrap icons
 
 npm i bootstrap-icons
 
+### Agradecimiento
+
+Quiero agradecerte por el excelente curso que se dicto, con este termino el escalon del Front-End y muy contento.
+Tambien quiero agradecer a Martin, mi tutor, que se puso al hombro todas mis dudas y las de mis compañeros.
+Estoy muy contento por todo el trayecto que se recorrió y muy conforme con lo logrado.
+
+Muchas Gracias!! 
+
+
+
 
 
 
