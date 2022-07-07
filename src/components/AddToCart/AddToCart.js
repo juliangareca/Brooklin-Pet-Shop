@@ -49,9 +49,6 @@ const AddToCart = ({ product, count }) => {
         </>
 
 
-        // <button classNameName="btn btn-primary" onClick={() => {addProductToCart(product, count)}}>
-        // Agregar al carrito
-        //  </button>
 
     )
 }
