@@ -1,5 +1,5 @@
 import "./ItemDetail.css";
-import ItemCount from "../ItemCount/ItemCount";
+import ItemCount from "../ItemCount/ItemCount.js";
 import { useContext, useEffect, useState } from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import CartContext from "../../context/CartContext";

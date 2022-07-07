@@ -1,9 +1,10 @@
-import ItemCount from "../ItemCount/ItemCount";
+import ItemCount from "../ItemCount/ItemCount.js";
 import "./Item.css";
 import { Link } from "react-router-dom";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { useContext, useEffect, useState } from "react";
 import CartContext from "../../context/CartContext";
+
 
 const Item = ({ producto }) => {
   const { addProductToCart } = useContext(CartContext)
