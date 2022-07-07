@@ -60,7 +60,7 @@ const ItemDetail = ({ info }) => {
         <div className="card mb-3 contenedorDetalles">
             <div className="row g-4">
                 <div className="col-md-4">
-                    <img src={info.img} className="img-fluid rounded-start" alt="Imagen" />
+                    <img src={info.img} className=" rounded-start img-detail" alt="Imagen" />
                 </div>
                 <div className="col-md-8 align">
                     <div className="card-body">
