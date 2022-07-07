@@ -1,3 +1,7 @@
 .contenedorDetalles{
     margin: 30px;
 }
+
+.align{
+    text-align-last: center;
+}

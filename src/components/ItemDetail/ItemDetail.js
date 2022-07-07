@@ -62,7 +62,7 @@ const ItemDetail = ({ info }) => {
                 <div className="col-md-4">
                     <img src={info.img} className="img-fluid rounded-start" alt="Imagen" />
                 </div>
-                <div className="col-md-8">
+                <div className="col-md-8 align">
                     <div className="card-body">
                         <h2 className="card-title">{info.producto}</h2>
                         <h4 className="card-text"><small className="text-muted">{info.tipo}</small></h4>
