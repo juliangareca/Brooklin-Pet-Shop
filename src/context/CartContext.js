@@ -33,6 +33,8 @@ const CartProvider = ({children}) =>{
     }
 
     const cleanCart = () => {
+        localStorage.setItem("products", JSON.stringify([]))
+
         setCartListItems([])
     }
 
