@@ -94,6 +94,11 @@ Estoy muy contento por todo el trayecto que se recorrió y muy conforme con lo l
 Muchas Gracias!! 
 
 
+Pd: Trate de subir el repo a Netlify y no me andaba, corria un error de modulo, asique buscando el error encontre que cuando subi por primera vez el repo no habia respetado la mayuscula en la carpeta ItemCount. En la primer entrega del Tp final lo identifique y lo modifique pero en GitHub la carpeta no se modifico nunca.
+Ayer baje el repo en otra compu para intentar correrlo e identifique este error, por lo borre la carpeta del repo y luego hice un commit nuevo para que se suba correctamente.
+
+Saludos!! 
+
 
 
 
