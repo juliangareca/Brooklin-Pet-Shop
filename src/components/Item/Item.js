@@ -1,4 +1,4 @@
-import ItemCount from "../ItemCount/ItemCount.js";
+import ItemCount from "../ItemCountt/ItemCount.js";
 import "./Item.css";
 import { Link } from "react-router-dom";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";

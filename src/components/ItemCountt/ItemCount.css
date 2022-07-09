@@ -1,0 +1,32 @@
+.button-container{
+    display: flex;
+    justify-content: center;
+
+}
+
+.button {
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 10px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+
+   }
+.count{
+    display: flex;
+    flex-direction: row;
+    place-content: space-evenly;
+}
+
+.row{
+    flex-direction: row;
+}
+
+div div p{
+    align-self: center;
+}
+
+.spacing{
+    margin-top: 25;
+} 
