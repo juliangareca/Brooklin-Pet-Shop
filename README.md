@@ -99,6 +99,9 @@ Ayer baje el repo en otra compu para intentar correrlo e identifique este error,
 
 Saludos!! 
 
+Finalmente pude publicarla!!!
+
+https://incomparable-cannoli-8d5159.netlify.app/
 
 
 
